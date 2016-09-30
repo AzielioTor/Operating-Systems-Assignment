@@ -1,0 +1,48 @@
+SampleOutput:
+
+SleepTime = 10000
+Number of producers: 5
+Number of consumers: 5
+Producer Thread Producing: 909
+Producer Thread Producing: 741
+Consumer Removing Item: 909
+Consumer Removing Item: 741
+Producer Thread Producing: 778
+Consumer Removing Item: 778
+Producer Thread Producing: 395
+Producer Thread Producing: 625
+Consumer Removing Item: 395
+Producer Thread Producing: 530
+Consumer Removing Item: 625
+Consumer Removing Item: 530
+Producer Thread Producing: 693
+Consumer Removing Item: 693
+Producer Thread Producing: 900
+Consumer Removing Item: 900
+Producer Thread Producing: 908
+Producer Thread Producing: 284
+Consumer Removing Item: 908
+Producer Thread Producing: 504
+Consumer Removing Item: 284
+Consumer Removing Item: 504
+Producer Thread Producing: 900
+Consumer Removing Item: 900
+Producer Thread Producing: 717
+Consumer Removing Item: 717
+Producer Thread Producing: 286
+Consumer Removing Item: 286
+Producer Thread Producing: 148
+Producer Thread Producing: 254
+Consumer Removing Item: 148
+Consumer Removing Item: 254
+Producer Thread Producing: 771
+Producer Thread Producing: 586
+Producer Thread Producing: 507
+Consumer Removing Item: 771
+
+Explanation:
+The reason this is so random with the producing and consuming is
+becuase of the CPU scheduling threads at different times. And all
+the threads have to fight over access to the Insert and Remove 
+methods becuase there's a semaphore that locks more than one thread
+accessing either the insert or remove method.
